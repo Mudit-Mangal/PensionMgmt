@@ -11,5 +11,5 @@ phases:
      - echo Build completed successfully
 artifacts:
  files:
-    - target/authorization-microservice.jar
+    - target/authorization-microservice.jar.original
  discard-paths: yes
