@@ -1,9 +1,0 @@
-com\cognizant\repository\PensionerDetailRepository.class
-com\cognizant\model\BankDetail.class
-com\cognizant\model\PensionerDetail.class
-com\cognizant\restclient\AuthorizationClient.class
-com\cognizant\service\PensionarDetailServiceImpl.class
-com\cognizant\exception\ResourceNotFoundException.class
-com\cognizant\config\SwaggerConfig.class
-com\cognizant\PensionerDetailMicroserviceApplication.class
-com\cognizant\controller\PensionerDetailsController.class
