@@ -6,10 +6,11 @@ phases:
   pre_build:
     commands:
     - echo Entered the build phase
+    - mvn clean package
   post_build:
      commands:
      - echo Build completed successfully
 artifacts:
  files:
-    - target/authorization-microservice.jar.original
+    - target/authorization-microservice.jar
  discard-paths: yes
