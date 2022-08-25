@@ -13,7 +13,7 @@ phases:
       - echo Building java
       - mvn clean package
       - echo Building the docker image
-      - docker build -tag authorization-microservice-909463 .
+      - docker build -t authorization-microservice-909463 .
       - docker tag authorization-microservice-909463:latest 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest
   post_build:
     commands:
