@@ -18,10 +18,10 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - docker push 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest
-      - echo Writing definition files
-      - printf '[{"name":"authorization-microservice-909463","imageUri":"%s"}]' 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest > imageDefinition.json
+#       - docker push 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest
+#       - echo Writing definition files
+#       - printf '[{"name":"authorization-microservice-909463","imageUri":"%s"}]' 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest > imageDefinition.json
 
-artifacts:
-  files: 
-    - imageDefinition.json
+# artifacts:
+#   files: 
+#     - imageDefinition.json
