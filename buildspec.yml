@@ -6,7 +6,7 @@ phases:
       - echo PreBuild Started ...
       - aws --version
       - docker --version
-      - (Get-ECRLoginCommand).Password | docker login --username AWS --password-stdin 274201610284.dkr.ecr.ap-south-1.amazonaws.com
+      - docker login --username AWS --password-stdin 274201610284.dkr.ecr.ap-south-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
