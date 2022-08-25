@@ -1,36 +1,27 @@
-# version: 0.2  
-
-# phases:
-#   pre_build:
-#     commands:
-#       - echo PreBuild Started ...
-#       - aws --version
-#       - docker --version
-#       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 274201610284.dkr.ecr.ap-south-1.amazonaws.com
-#   build:
-#     commands:
-#       - echo Build started on `date`
-#       - echo Building java
-#       - mvn clean package
-#       - echo Building the docker image
-#       - docker build -t authorization-microservice-909463 .
-#       - docker tag authorization-microservice-909463:latest 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest
-#   post_build:
-#     commands:
-#       - echo Build completed on `date`
-#       - docker push 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest
-#       - echo Writing definition files
-#       - printf '[{"name":"authorization-microservice-909463","imageUri":"%s"}]' 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest > imageDefinition.json
-
-# artifacts:
-#   files: 
-#     - imageDefinition.json
-
-version: 0.2   
+version: 0.2  
 
 phases:
   pre_build:
-  pre_build: 
     commands:
       - echo PreBuild Started ...
       - aws --version
+      - docker --version
+      - (Get-ECRLoginCommand).Password | docker login --username AWS --password-stdin 274201610284.dkr.ecr.ap-south-1.amazonaws.com
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building java
+      - mvn clean package
+      - echo Building the docker image
+      - docker build -t authorization-microservice-909463 .
+      - docker tag authorization-microservice-909463:latest 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - docker push 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest
+      - echo Writing definition files
+      - printf '[{"name":"authorization-microservice-909463","imageUri":"%s"}]' 274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-microservice-909463:latest > imageDefinition.json
+
+artifacts:
+  files: 
+    - imageDefinition.json
